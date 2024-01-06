@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog</title>
+
+ <link rel="icon" href="https://scontent.fpkr1-1.fna.fbcdn.net/v/t39.30808-6/290750799_535764601405891_4239442084618871829_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=wQUjPWWhAT8AX8Jms87&_nc_ht=scontent.fpkr1-1.fna&oh=00_AfApLcxkXOEmRUi8M8F1ItcB_FUrUXFdEvLIK4zGFIaR2Q&oe=659AB513">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  <style>
+      body {
+        background-color: #1c1c1c;
+        color: #b2b2b2;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      .navbar {
+        background-color: #292b2c;
+      }
+
+      .jumbotron {
+        background-color: #212529;
+        color: #b2b2b2;
+        padding: 2rem;
+      }
+
+      .section {
+        padding: 4rem 0;
+      }
+
+      .card {
+        background-color: #343a40;
+        border: none;
+        border-radius: 8px;
+        transition: transform 0.3s;
+      }
+
+      .card:hover {
+        transform: scale(1.05);
+      }
+
+      .card-title {
+        color: #b2b2b2;
+      }
+
+      .card-text {
+        color: #b2b2b2;
+      }
+
+      a {
+        color: #17a2b8;
+      }
+
+      a:hover {
+        color: #138496;
+      }
+
+      code {
+        color: #28a745;
+      }
+
+      h2, h5 {
+        color: #b2b2b2;
+      }
+
+      .contact-email {
+        color: #dc3545;
+        font-weight: bold;
+      }
+
+      /* Improved readability */
+      p {
+        line-height: 1.6;
+        text-align: justify;
+      }
+
+      /*subtle border to sections for separation */
+      .section {
+        border-bottom: 1px solid #343a40;
+      }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="#">Lamniscate Inc.</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#tools">Tools</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#resources">Resources</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Jumbotron -->
+  <div class="jumbotron text-center">
+    <h1 class="display-4">Unveiling the World of Ethical Hacking</h1>
+    <p class="lead" style="text-align:center;">Become a White Hat Hacker and secure the digital world!</p>
+  </div>
+
+  <!-- About Section -->
+  <div id="about" class="section">
+    <div class="container">
+      <h2 class="text-center mb-4">About Ethical Hacking</h2>
+      <p>Ethical hacking, often referred to as penetration testing or white-hat hacking, involves a distinctive approach to cybersecurity. In this digital age, where technology reigns supreme, safeguarding systems and networks is paramount. Ethical hacking employs the same tools, techniques, and processes employed by malicious hackers, but with a pivotal distinction—it is conducted with explicit permission.</p>
+
+      <p>The primary objective of ethical hacking is to identify and expose potential vulnerabilities in a system's defenses before malevolent actors can exploit them for nefarious purposes. This proactive stance sets ethical hackers apart, positioning them as the guardians of digital security. By mimicking the tactics of malicious hackers, ethical hackers play a crucial role in fortifying the digital infrastructure against cyber threats.</p>
+
+      <p>Ethical hacking operates on the premise that understanding the mindset and methodologies of malicious hackers is key to developing robust security measures. By staying one step ahead of potential attackers, ethical hackers contribute significantly to the ongoing battle for cybersecurity. Through meticulous testing and analysis, they assess the strengths and weaknesses of systems, providing organizations with valuable insights to bolster their defenses.</p>
+
+      <p>As technology continues to advance, the importance of ethical hacking becomes increasingly evident. It serves as a vital component of a comprehensive cybersecurity strategy, ensuring that organizations can identify and rectify vulnerabilities before they can be exploited. Ethical hacking is not just a profession; it's a commitment to the greater good of securing the digital landscape for individuals, businesses, and society as a whole.</p>
+    </div>
+  </div>
+
+  <!-- Tools Section -->
+  <div id="tools" class="section bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Essential Tools</h2>
+      <!-- Add cards with tool information -->
+      <div class="card-deck">
+          <a href="nmap.html" style="text-decoration:none;">   
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Nmap</h5>
+            
+                <p class="card-text">Nmap, short for "Network Mapper," stands as an open-source powerhouse for network discovery and security auditing. Its capabilities extend to scanning and mapping networks, revealing open ports, services, and potential vulnerabilities. With Nmap, ethical hackers gain a comprehensive understanding of network structures, enabling them to proactively address security loopholes.</p>
+
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Wireshark</h5>
+            <p class="card-text">Wireshark, a network protocol analyzer, provides ethical hackers with the ability to capture and interactively browse network traffic. This tool plays a pivotal role in dissecting communication protocols, facilitating the identification of anomalies and potential security threats. Wireshark's versatility makes it an indispensable asset for those seeking a deep understanding of network activities during penetration testing.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Metasploit</h5>
+            <p class="card-text">Metasploit, often hailed as a penetration testing framework, simplifies the complex art of hacking. It equips ethical hackers with a diverse array of tools for exploiting vulnerabilities, conducting security assessments, and managing the intricacies of penetration testing. Metasploit's user-friendly interface and comprehensive features make it an invaluable asset in the ethical hacker's toolkit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Resources Section -->
+  <div id="resources" class="section">
+    <div class="container">
+      <h2 class="text-center mb-4">Learning Resources</h2>
+      <p>Embarking on a journey into ethical hacking requires not just tools but also a wealth of knowledge and resources. Here are some recommended learning resources to guide you on your path to becoming a proficient ethical hacker:</p>
+      <ul>
+        <li><a href="https://owasp.org/www-project-top-ten/" target="_blank">OWASP (Open Web Application Security Project)</a></li>
+        <li><a href="https://docs.metasploit.com/" target="_blank">Metasploit Unleashed</a></li>
+        <li><a href="https://0x00sec.org/" target="_blank">Ethical Hacker Forum</a></li>
+        <li><a href="https://roadmap.sh/cyber-security" target="_blank">Cybersecurity Roadmap</a></li>
+        <li><a href="https://github.com/nahamsec/Resources-for-Beginner-Bug-Bounty-Hunters" target="_blank">Bug Bounty</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <div id="contact" class="section bg-light">
+    <div class="container">
+    
+      <h2 class="text-center mb-4">Contact Us</h2>
+      <!-- Add a contact form or contact information here -->
+	    <center><img style="height: 100px; width:100px; border-radius:0px 7px 0px 7px;"  src="https://scontent.fpkr1-1.fna.fbcdn.net/v/t39.30808-6/290750799_535764601405891_4239442084618871829_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=wQUjPWWhAT8AX8Jms87&_nc_ht=scontent.fpkr1-1.fna&oh=00_AfApLcxkXOEmRUi8M8F1ItcB_FUrUXFdEvLIK4zGFIaR2Q&oe=659AB513"></center><br>
+
+      <center>Have questions or need assistance? Reach out to us via email at <span class="contact-email">info@lamniscateinc.com</span>.</center>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>
