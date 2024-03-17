@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    
+    <style>
+        /*portfolio ko lagi*/
+
+        .portfolio .box-container{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            flex-wrap: wrap;
+            gap:1.5rem;
+            margin: 20px auto; /* Center videos horizontally */
+            max-width: 1200px; /* Set max-width for better responsiveness */
+            
+        }
+
+        .portfolio .box-container .box{
+            flex:1 1 30rem;
+            border-radius: .5rem;
+            border:1rem solid rgba(63, 155, 27, 0.5);
+            box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
+            position: relative;
+            overflow:hidden;
+            height:25rem;
+        }
+
+        .portfolio .box-container .box img{
+            height: 100%;
+            width:100%;
+            object-fit: cover;
+        }
+
+        .portfolio .box-container .box .content{
+            height: 100%;
+            width:100%;
+            position: absolute;
+            top:0; left:-125%;
+            background:#fff9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .portfolio .box-container .box:hover .content{
+            left:0;
+        }
+
+        .content{
+            transition: all .2s linear;
+        }
+
+        .btn{
+            display: inline-block;
+            margin-top: 1rem;
+            padding:.8rem 3rem;
+            background:rgb(3, 49, 3);
+            color:#fff;
+            font-size: 1.7rem;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 1px 7px 1px 7px;
+            align-content: center;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size:20px ;
+        }
+
+        .btn:hover{
+            background:green;
+            letter-spacing: .2rem;
+        }
+    </style>
+</head>
+<body>
+    <section class="portfolio" id="portfolio">
+        <div class="box-container">
+    
+            <div class="box tilt" title="Responsive art and Recreation Website">
+                <img src="../img/portfolio/artrik.PNG" alt="">
+                <div class="content">
+                    <a href="https://github.com/yokai-crow/APU_Projects/tree/main/Artrik.com" target="_blank" class="btn">Peek A Boo</a>
+                </div>
+            </div>
+    
+            <div class="box tilt" title="Console Based Health Insurence Managenment System">
+                <img src="../img/portfolio/c-programming-language.jpg" alt="">
+                <div class="content">
+                    <a href="https://github.com/yokai-crow/APU_Projects/tree/main/Health%20Insurence%20Management%20System" target="_blank" class="btn">Peek A Boo</a>
+                </div>
+            </div>
+    
+            <div class="box tilt" title="Console Based Loan Managenment System">
+                <img src="../img/portfolio/python.jpeg" alt="">
+                <div class="content">
+                    <a href="https://github.com/yokai-crow/APU_Projects/tree/main/Loan%20Management%20System" target="_blank" class="btn">Peek A Boo</a>
+                </div>
+            </div>
+    
+            <div class="box tilt" title="Network Design">
+                <img src="../img/portfolio/packet.jpg" alt="">
+                <div class="content">
+                    <a href="https://github.com/yokai-crow/APU_Projects/tree/main/Network%20Design" target="_blank" class="btn">Peek A Boo</a>
+                </div>
+            </div>
+    
+            <div class="box tilt" title="Courrier Management System">
+                <img src="../img/portfolio/java.png" alt="">
+                <div class="content">
+                    <a href="https://github.com/yokai-crow/APU_Projects/tree/main/courrier%20management%20system" target="_blank" class="btn">Peek A Boo</a>
+                </div>
+            </div>
+    
+            <div class="box tilt" title="Well Surprise">
+                <img src="../img/a.jpeg" alt="">
+                <div class="content">
+                    <a href="https://github.com/yokai-crow/Hope" TARGET="_blank" class="btn">Peek A Boo</a>
+                </div>
+            </div>
+    
+        </div>
+    </section>
+    
+</body>
+</html>
+
