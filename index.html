@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arun Saru | Home</title>
+    <link rel="icon" type="image/png" href="./img/a.jpeg"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <style>
+        body {
+            margin: 0;
+            font-family: monospace;
+            background-image: url('./img/evangelion.png');
+            background-size: contain;
+            background-repeat: unset;
+            background-position: center;
+        }
+
+        .taskbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 30px; 
+            background-color: #2C2C2C; 
+            color: #FFFFFF; 
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            justify-content: space-between;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            font-size: 14px; 
+            margin-right: auto;
+            display: flex;
+            align-items: center;
+            font-weight: bold; 
+        }
+
+        .logo img {
+            height: 20px; 
+            margin-right: 10px;
+            width: 30px;
+            border-radius: 4px 0 4px 0;
+        }
+
+        .time {
+            font-size: 14px; 
+            margin: 0;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .logout {
+            font-size: 14px; 
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .logout-icon {
+            margin-right: 5px;
+        }
+
+        .desktop {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            margin-top: 40px; 
+        }
+
+        .folder {
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .folder:hover {
+            background-color: rgba(248, 248, 248, 0.4);
+            border-radius: 3px;
+        }
+
+        .folder-icon {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .folder-name {
+            margin: 0;
+            color: #ccc;
+        }
+
+        .content {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: rgba(248, 248, 248, 0); 
+        }
+
+        /* Terminal styles */
+        .terminal-container {
+            display: none; 
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #000;
+            color: #fff;
+            font-family: monospace;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); 
+            overflow-y: auto;
+            height: 300px; 
+        }
+
+        .terminal-output {
+            color: #00FF00; 
+        }
+
+        .terminal-input {
+            color: #fff;
+            display: flex;
+            align-items: center;
+        }
+
+        .terminal-input input {
+            background-color: transparent;
+            color: #fff;
+            border: none;
+            outline: none;
+            font-family: monospace;
+            width: 90%;
+        }
+
+        .terminal-input input:focus {
+            outline: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="taskbar">
+        <div class="logo"><img src="./img/a.jpeg" alt="Logo">ARUN SARU</div>
+        <div class="time" id="datetime"></div>
+        <div class="logout" onclick="logout()" title="oldpage"><i class="fas fa-sign-out-alt logout-icon"></i>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+    </div>
+
+    <div class="desktop">
+        <div class="folder" id="home">
+            <i class="fas fa-folder folder-icon" style="color: #E27D60"></i>
+            <p class="folder-name">Home</p>
+        </div>
+        <div class="folder" id="portfolio">
+            <i class="fas fa-folder folder-icon" style="color: #85DCBa"></i>
+            <p class="folder-name">Portfolio</p>
+        </div>
+        <div class="folder" id="about">
+            <i class="fas fa-folder folder-icon" style="color: #E8A87C"></i>
+            <p class="folder-name">About</p>
+        </div>
+        <div class="folder" id="music">
+            <i class="fas fa-folder folder-icon" style="color: #C38D9E"></i>
+            <p class="folder-name">Music</p>
+        </div>
+    </div>
+
+    <div class="content" id="content">
+        <!-- Content will be loaded here -->
+    </div>
+
+    <!-- Terminal -->
+    <div class="terminal-container" id="terminal">
+        <div class="terminal-output">Welcome to My Homepage!</div>
+        <div class="terminal-output">Type "help" for a list of commands.</div>
+        <div class="terminal-output">Type a command:</div>
+        <div class="terminal-input">
+            <div class="prompt">$</div>
+            <input type="text" id="commandInput" autofocus>
+        </div>
+    </div>
+
+    <script>
+        // Function to update date and time
+        function updateDateTime() {
+            const now = new Date();
+            const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            const formattedDate = now.toLocaleDateString('en-US', options);
+            document.getElementById('datetime').textContent = formattedDate;
+        }
+
+        // Initial call to update date and time
+        updateDateTime();
+
+        // Update date and time every second
+        setInterval(updateDateTime, 1000);
+
+        // Logout function
+        function logout() {
+            //redirecting to old page
+            alert("redirecting to old page");
+            window.location.href = 'oldindex.html';
+        }
+
+        // Added click event listeners to each folder
+        document.querySelectorAll('.folder').forEach(folder => {
+            folder.addEventListener('click', () => {
+                const folderId = folder.id;
+                fetchContent(folderId);
+            });
+        });
+
+        // Function to fetch content from external files
+        function fetchContent(folderId) {
+            const url = `./Mobile/${folderId}.html`;
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    if (folderId === 'home') {
+                        // Show the terminal content for the home folder
+                        document.getElementById('content').style.display = 'none';
+                        document.getElementById('terminal').style.display = 'block';
+                    } else {
+                        // Show other folder content
+                        document.getElementById('content').innerHTML = data;
+                        document.getElementById('content').style.display = 'block';
+                        document.getElementById('terminal').style.display = 'none';
+                    }
+                })
+                .catch(error => {
+                    console.error('There was a problem with the fetch operation:', error);
+                });
+        }
+
+        // Execute command in terminal when Enter key is pressed
+        document.getElementById('commandInput').addEventListener('keyup', function(event) {
+            if (event.key === 'Enter') {
+                executeCommand();
+            }
+        });
+
+        // Command history
+        const commandHistory = [];
+        let historyIndex = -1;
+
+        // Execute command in terminal
+        function executeCommand() {
+            const commandInput = document.getElementById('commandInput');
+            const command = commandInput.value.trim().toLowerCase();
+            const terminalOutput = document.createElement('div');
+            terminalOutput.classList.add('terminal-output');
+            terminalOutput.textContent = '$ ' + command;
+            document.querySelector('.terminal-container').insertBefore(terminalOutput, document.querySelector('.terminal-input'));
+            commandHistory.push(command);
+            historyIndex = -1;
+            switch (command) {
+                case 'help':
+                    terminalOutput.innerHTML = '';
+                    const helpLines = [
+                        'help - Show list of commands',
+                        'clear - Clear the terminal output',
+                        'exit - Exit Terminal',
+                        'home - Navigate to the Home folder',
+                        'portfolio - Navigate to the Portfolio folder',
+                        'about - Navigate to the About folder',
+                        'music - Navigate to the Music folder',
+                        'oldpage - Navigate to old index page'
+                    ];
+
+                    helpLines.forEach(line => {
+                        const div = document.createElement('div');
+                        div.textContent = line;
+                        terminalOutput.appendChild(div);
+                    });
+                    break;
+                
+                case 'clear':
+                    // Clear terminal output only
+                    document.querySelectorAll('.terminal-output').forEach(output => output.remove());
+                    break;
+
+                case 'exit':
+                    // Reload the page
+                    window.location.reload();
+                    break;
+                case 'home':
+                    fetchContent('home');
+                    break;
+                case 'portfolio':
+                    fetchContent('portfolio');
+                    break;
+                case 'about':
+                    fetchContent('about');
+                    break;
+                case 'music':
+                    fetchContent('music');
+                    break;
+                case 'oldpage':
+                    window.location.href = 'oldindex.html';
+                    break;
+                
+                default:
+                    terminalOutput.textContent = 'Command not recognized. Type "help" for a list of commands.';
+                    break;
+            }
+            // Scroll to the bottom of the terminal
+            document.querySelector('.terminal-container').scrollTop = document.querySelector('.terminal-container').scrollHeight;
+            
+            if (command !== 'clear') {
+                commandInput.value = ''; // Clear input
+            }
+        }
+
+        // Command history navigation
+        document.getElementById('commandInput').addEventListener('keydown', function(event) {
+            if (event.key === 'ArrowUp') {
+                historyIndex = Math.min(historyIndex + 1, commandHistory.length - 1);
+                document.getElementById('commandInput').value = commandHistory[historyIndex] || '';
+            } else if (event.key === 'ArrowDown') {
+                historyIndex = Math.max(historyIndex - 1, -1);
+                document.getElementById('commandInput').value = commandHistory[historyIndex] || '';
+            }
+        });
+    </script>
+</body>
+</html>
