@@ -271,7 +271,8 @@
                         'portfolio - Navigate to the Portfolio folder',
                         'about - Navigate to the About folder',
                         'music - Navigate to the Music folder',
-                        'oldpage - Navigate to old index page'
+                        'oldpage - Navigate to old index page',
+                        'developer - show more info'
                     ];
 
                     helpLines.forEach(line => {
@@ -305,7 +306,8 @@
                 case 'oldpage':
                     window.location.href = 'oldindex.html';
                     break;
-                
+                case 'developer':
+                    terminalOutput.innerHTML = '© All Rights Reserved 2024 | developed with ❤ by Arun Saru'
                 default:
                     terminalOutput.textContent = 'Command not recognized. Type "help" for a list of commands.';
                     break;
