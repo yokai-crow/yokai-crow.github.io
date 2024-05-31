@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./img/a.jpeg"/>
+    <title>Penetration Testing Course - Lamniscate Learn</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            text-align: center;
+        }
+
+        header .logo {
+            position: absolute;
+            left: 1rem;
+            height: 50px; 
+        }
+        main {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex: 1;
+        }
+        h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .course-overview {
+            text-align: center;
+        }
+        .course-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+        .module {
+            background-color: white;
+            padding: 0;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            flex: 0 1 calc(33.333% - 1rem);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .module img {
+            width: 100%;
+            height: 40vh;
+            border-bottom: 1px solid #ddd;
+        }
+        .module div {
+            padding: 1rem;
+            text-align: center;
+        }
+        .module .description {
+            display: none;
+            padding: 1rem;
+            text-align: center;
+            border-top: 1px solid #ddd;
+        }
+        .module.active .description {
+            display: block;
+        }
+        .module:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #333;
+            color: white;
+            position: relative;
+        }
+        @media (max-width: 768px) {
+            .module {
+                flex: 0 1 calc(50% - 1rem);
+            }
+        }
+        @media (max-width: 480px) {
+            .module {
+                flex: 0 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="./learn.html" style="padding-bottom:37px;"><img src="./thumbnail/logo.jpg" alt="Logo" class="logo" style="border-radius: 10px;"></a>
+        <h1>Penetration Testing Course</h1>
+        
+    </header>
+    <h4 style="color: red; text-align: center;">Note: This page is under construction</h4>
+    <main>
+        <section class="course-overview">
+            <h2>Course Overview</h2>
+            <p>This Penetration Testing Course is designed to teach you the ins and outs of ethical hacking and cybersecurity. You'll learn about various penetration testing techniques, tools, and methodologies to help secure systems and networks.</p>
+        </section>
+        <h2>Course Modules</h2>
+        <section class="course-content">
+            <div class="module">
+                <img src="./thumbnail/pt1.jpg" alt="Module 1 Thumbnail">
+                <div>Module 1: Introduction to Penetration Testing</div>
+                <div class="description">This module covers the basics of penetration testing, including the different types of testing, legal considerations, and the phases of a penetration test.</div>
+            </div>
+            <div class="module">
+                <img src="./thumbnail/pt2.jpg" alt="Module 2 Thumbnail">
+                <div>Module 2: Information Gathering</div>
+                <div class="description">Learn how to gather information about a target system or network using various techniques and tools. This module covers both passive and active information gathering methods.</div>
+            </div>
+            <div class="module">
+                <img src="./thumbnail/pt3.png" alt="Module 3 Thumbnail">
+                <div>Module 3: Vulnerability Analysis</div>
+                <div class="description">In this module, you'll learn how to identify and analyze vulnerabilities in a system or network. You'll also learn how to use vulnerability scanning tools.</div>
+            </div>
+            <div class="module">
+                <img src="./thumbnail/pt4.jpeg" alt="Module 4 Thumbnail">
+                <div>Module 4: Exploitation</div>
+                <div class="description">This module focuses on exploiting identified vulnerabilities to gain access to a system. You'll learn about various exploitation techniques and tools.</div>
+            </div>
+            <div class="module">
+                <img src="./thumbnail/pt5.jpg" alt="Module 5 Thumbnail">
+                <div>Module 5: Post-Exploitation</div>
+                <div class="description">After gaining access, this module covers what to do next. Topics include maintaining access, covering tracks, and gathering additional information.</div>
+            </div>
+            <div class="module">
+                <img src="./thumbnail/pt6.jpg" alt="Module 6 Thumbnail">
+                <div>Module 6: Reporting and Remediation</div>
+                <div class="description">Learn how to create comprehensive penetration testing reports and provide recommendations for remediation of discovered vulnerabilities.</div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 <a href="https://arunsaru.com.np" style="color: #fff; text-decoration: none;" target="_blank">Arun Saru</a>. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const modules = document.querySelectorAll('.module');
+
+            modules.forEach(module => {
+                module.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

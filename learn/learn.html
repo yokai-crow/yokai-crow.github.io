@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./img/a.jpeg"/>
+    <title>Lamniscate Learn</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        main {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex: 1;
+        }
+        h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+        li {
+            background-color: white;
+            padding: 0;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            flex: 0 1 calc(25% - 1rem);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        li img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+        }
+        li div {
+            padding: 1rem;
+            text-align: center;
+            flex-grow: 1;
+        }
+        li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .course-description {
+            display: none;
+            margin-top: 1rem;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            background-color: white;
+            max-width: 600px;
+            margin: 2rem auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .course-description.visible {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #333;
+            color: white;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Lamniscate Learning Platform</h1>
+    </header>
+    <main>
+        <h2>Available Courses</h2>
+        <ul id="course-list">
+            <li data-description="Learn the basics of Adobe Illustrator, including tools, techniques, and tips." data-url="illustratorcourse.html">
+                <img src="./thumbnail/Illustrator.png" alt="Illustrator Course Thumbnail">
+                <div>Illustrator Course</div>
+            </li>
+            <!-- Add more courses here -->
+            <li data-description="Learn the basics of Ethical Hacking, including tools, techniques, and tips." data-url="penetrationtestingcourse.html">
+                <img src="./thumbnail/pt.jfif" alt="Penetration Testing Course Thumbnail">
+                <div>Penetration Testing Course</div>
+            </li>
+        </ul>
+        <div id="course-description" class="course-description"></div>
+    </main>
+    <footer>
+        <p>&copy; 2024 <a href="https://arunsaru.com.np" style="color: #fff; text-decoration: none;" target="_blank">Arun Saru</a>. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const courseList = document.getElementById('course-list');
+            const courseDescription = document.getElementById('course-description');
+
+            courseList.addEventListener('click', function(e) {
+                const li = e.target.closest('li');
+                if (li) {
+                    const description = li.getAttribute('data-description');
+                    const url = li.getAttribute('data-url');
+                    courseDescription.innerText = description;
+                    courseDescription.classList.add('visible');
+
+                    setTimeout(() => {
+                        window.location.href = url;
+                    }, 3000); // Redirect after 3 seconds
+                }
+            });
+        });
+    </script>
+</body>
+</html>
